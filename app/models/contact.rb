@@ -140,6 +140,10 @@ class Contact < ApplicationRecord
     email_format
   end
 
+  def phone_number
+    read_attribute(:phone_number).truncate(7)
+  end
+
   private
 
   def ip_lookup
