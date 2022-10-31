@@ -141,6 +141,7 @@ class Contact < ApplicationRecord
   end
 
   def phone_number
+    return self["phone_number"] unless self.persisted?
     read_attribute(:phone_number).truncate(7)
   end
 
